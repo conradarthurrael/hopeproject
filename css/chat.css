@@ -1,0 +1,259 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgba(45, 45, 45);
+    background-attachment: fixed;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  img {
+    display: block;
+    max-width: 100%;
+  }
+  
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.8) 0%,
+      rgba(42, 153, 32, 0.6) 30%, white 100%
+    );
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(35, 79, 30, 0.28);
+    border-top-color: rgba(255, 255, 255, 0.72);
+    padding: 20px 24px;
+  }
+  
+  .nav-container {
+    display: flex;
+    gap: 28px;
+  }
+
+  .nav-container2 {
+    position: relative;
+    left: 120%;
+  }
+  
+  .nav-container ul {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-container li a {
+    position: relative;
+    font-weight: 600;
+    transition: color 0.2s ease;
+  }
+  
+  .nav-container li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 100%;
+    height: 2px;
+    background: rgb(53, 53, 53);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease;
+  }
+  
+  .nav-container li a:hover {
+    color: rgb(53, 53, 53);
+  }
+  
+  .nav-container li a:hover::after {
+    transform: scaleX(1);
+  }
+  
+  .logo {
+    height: 40px;
+    align-self: center;
+    padding-left: 20px;
+  }
+
+  .chat-container {
+    height: 100vh;
+  }
+
+  .chatprofile {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.8) 0%,
+      rgba(42, 153, 32, 0.6) 30%, white 100%
+    );
+    width: 1420px;
+    margin-bottom: 40px;
+    height: 15vh;
+    margin-left: 20px;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-shrink: 0;
+    font-size: 10px;
+    color: white;
+    text-align: center;
+    border-radius: 40px;
+    border: 4px solid black;
+  }
+  .chat-container2 {
+    height: 90vh;
+    display: flex;
+  }
+  #chats {
+    height: 90vh;
+    background: linear-gradient(135deg, black, rgb(45, 45, 45), gray);
+    width: 200px;
+    margin-left: 20px;
+    overflow-y: auto;
+    max-height: 600px;
+    border-radius: 30px;
+  }
+
+  #chats::-webkit-scrollbar {
+    display: none;
+  }
+  .messages {
+    height: 90vh;
+    background: linear-gradient(135deg, black, rgb(45, 45, 45), gray);
+    width: 1200px;
+    margin-left: 20px;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column-reverse;
+    border-radius: 60px;
+  }
+
+  .messages::-webkit-scrollbar {
+    display: none;
+  }
+
+  .chatprofile::-webkit-scrollbar {
+    display: none;
+  }
+
+  .messageform {
+    border: 4px solid white;
+    height: 20vh;
+    width: 1200px;
+    margin-left: 240px;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.8) 0%,
+      rgba(42, 153, 32, 0.6) 30%, white 100%
+    );
+  }
+
+  #typemessage {
+    width: 1000px;
+    height: 15vh;
+  }
+
+  .chatprofile a {
+    margin-left: 100px;
+    align-self: center;
+  }
+
+  .chatprofile2 {
+    background-color: teal;
+    margin-left: 30px;
+    height: 84%;
+    border-radius: 20px;
+  }
+  .chatprofile #profilepic2 {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 5px;
+  }
+
+  #chatbubble-sender {
+    background-color: skyblue;
+    margin: 20px;
+    padding: 2px;
+    text-align: center;
+    border-radius: 40px;
+    position: relative;
+    left: 80%;
+    width: 200px;
+    max-width: 75%;
+    width: fit-content;
+    overflow-wrap: anywhere;
+    border-radius: 18px;
+    font-size: 14px;
+    line-height: 1.4;
+    display: flex;
+    justify-content: ;
+  }
+
+  #chatbubble-receiver {
+    background-color: gray;
+    margin: 20px;
+    padding: 2px;
+    text-align: center;
+    border-radius: 40px;
+    position: relative;
+    left: 0%;
+    width: 200px;
+    max-width: 75%;
+    width: fit-content;
+    overflow-wrap: anywhere;
+    border-radius: 18px;
+    font-size: 14px;
+    line-height: 1.4;
+    display: flex;
+  }
+
+  .messages #profilepic2 {
+    border-radius: 50%;
+  }
+
+  .hiddeninput {
+    position: absolute;
+    visibility: hidden;
+  }
+
+  .chats-container {
+    background-color: teal;
+    width: 100%;
+    color: white;
+    display: flex;
+    text-align: center;
+  }
+
+  #sender-row {
+    justify-content: flex-end;
+  }
+
+  #receiver-row {
+    justify-content: flex-start;
+  }
+
+  .namecontainer {
+    margin-left: 20px;
+    margin-top: 20px;
+  }

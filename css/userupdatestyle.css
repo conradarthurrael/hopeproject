@@ -1,0 +1,150 @@
+.updatecontainer2 {
+    background: linear-gradient(45deg, #23851a, white);
+    width: 600px;
+    height: 800px;
+    border-radius: 40px;
+    justify-self: center;
+    align-self: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.updatecontainer3 {
+    margin-left: 130px;
+}
+
+.updatecontainer3 h1 {
+    background-color: white;
+    color: black;
+    border-radius: 30px;
+    text-align: center;
+    width: 326px;
+}
+.updatecontainer3 label {
+    font-size: 26px;
+}
+.updatecontainer3 input {
+    font-size: 26px;
+}
+
+.updatecontainer3 select {
+    width: 326px;
+}
+.sex {
+    font-size: 26px;
+    width: 100%;
+}
+
+.usertype {
+    font-size: 26px;
+    width: 100%;
+}
+
+.updatebutton {
+    font-size: 26px;
+    font-weight: bold;
+    color: black;
+    background-color: white;
+    box-shadow: 1px 1px 1px 2px white;
+    margin-top: 10px;
+    width: 326px;
+    cursor: pointer;
+}
+
+.updatebutton:hover {
+    background-color: black;
+    color: white;
+}
+
+* {
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgba(45, 45, 45);
+    background-attachment: fixed;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  img {
+    display: block;
+    max-width: 100%;
+  }
+  
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.8) 0%,
+      rgba(42, 153, 32, 0.6) 30%, white 100%
+    );
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(35, 79, 30, 0.28);
+    border-top-color: rgba(255, 255, 255, 0.72);
+    padding: 20px 24px;
+  }
+  
+  .nav-container {
+    display: flex;
+    gap: 28px;
+  }
+
+  .nav-container2 {
+    position: relative;
+    left: 90%;
+  }
+  
+  .nav-container ul {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-container li a {
+    position: relative;
+    font-weight: 600;
+    transition: color 0.2s ease;
+  }
+  
+  .nav-container li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 100%;
+    height: 2px;
+    background: rgb(53, 53, 53);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease;
+  }
+  
+  .nav-container li a:hover {
+    color: rgb(53, 53, 53);
+  }
+  
+  .nav-container li a:hover::after {
+    transform: scaleX(1);
+  }
+  
+  .logo {
+    height: 40px;
+    align-self: center;
+    padding-left: 20px;
+  }
