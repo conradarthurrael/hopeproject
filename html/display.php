@@ -1,5 +1,5 @@
 <?php
-include "mhdb.php";
+include "mental-health-db.php";
 session_start();
 $user_id6 = $_SESSION['user_id'];
 $query = $_SESSION["queryunique"];

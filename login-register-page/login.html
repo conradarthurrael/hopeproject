@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - H ♡ P E</title>
+    <link rel="stylesheet" href="../design/login-page.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="../index.php"><img src="../images/hope-logo.png" alt="Logo" class="logo" /></a>
+        <ul>
+          <li><a href="../index.php">Home</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="login-container">
+      <h1>Welcome back</h1>
+      <p class="login-intro">Log in to continue to your H.O.P.E. account.</p>
+      <form action="../login.php" method="post">
+        <div class="form-group">
+          <label for="username">Username or Email</label>
+          <input type="text" id="username" name="username" placeholder="Enter username or email" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter password" required />
+        </div>
+        <button type="submit" name="loginbutton">Login</button>
+      </form>
+      <p class="register-link">
+        Don't have an account? <a href="../register.php">Register here</a>.
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php 
-    include "mhdb.php";
+    include "mental-health-db.php";
     session_start();
     if(!isset($_SESSION['user_id'])){
         header("Location: ../index.php");
@@ -26,12 +26,12 @@
         <img src="../images/hope-logo.png" alt="Logo" class="logo" />
         <div class="nav-container2">
         <ul>
-          <li><a href="gchomepage.php">Home</a></li>
-          <li><a href="students2.php">Students</a></li>
+          <li><a href="guidance-counsellor-homepage.php">Home</a></li>
+          <li><a href="students-2.php">Students</a></li>
           <li><a href="reports.php">Reports</a></li>
           <li><a href="appointments.php">Appointments</a></li>
           <li><a href="chat.php">Chat</a></li>
-          <li><a href="mhlogout.php">Log Out</a></li>
+          <li><a href="mental-health-logout.php">Log Out</a></li>
         </ul>
 </div>
       </div>
@@ -88,7 +88,7 @@
             </div>
         </div>
         <div class="messageform">
-            <form id="typemessage-container" method="POST" action="chatmessage.php">
+            <form id="typemessage-container" method="POST" action="chat-message.php">
                 <textarea id="typemessage" name="typemessage" placeholder="Enter a message..." maxlength="5000" required></textarea>
                 <button type="submit">Send</button>
                 <input type="text" name="sender_id" class="hiddeninput" value=<?=$user_id5?>>

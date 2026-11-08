@@ -8,7 +8,7 @@
 </head>
 <body>
     <?php
-    include "mhdb.php";
+    include "mental-health-db.php";
     session_start();
     $user_id = $_SESSION['user_id'];
     $guidance_id = $_GET['user_id'];
@@ -18,17 +18,17 @@
         <img src="../images/hope-logo.png" alt="Logo" class="logo" />
         <div class="nav-container2">
         <ul>
-        <li class="chat"><a href="chat2.php" class="chat2">Chat</a></li>
+        <li class="chat"><a href="chat-2.php" class="chat2">Chat</a></li>
         <li><a href="appointment.php">Book an appointment</a></li>
-        <li><a href="bookanappointment.php">Back</a></li>
-          <li><a href="mhlogout.php">Log Out</a></li>
+        <li><a href="book-an-appointment.php">Back</a></li>
+          <li><a href="mental-health-logout.php">Log Out</a></li>
         </ul>
 </div>
       </div>
     </nav>
 <div class="outerformcontainer">
     <div class="formcontainer">
-    <form method="POST" action="appointmentnotify.php">
+    <form method="POST" action="appointment-notify.php">
 <h2 class="bd">Guidance Appointment</h2>
 <h3>Confirmation details</h3>
 <input type="text" name="guidance_id" class="hideinput" value=<?=$guidance_id?>>

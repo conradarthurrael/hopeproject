@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php 
-    include "mhdb.php";
+    include "mental-health-db.php";
     session_start();
     if(!isset($_SESSION['user_id'])){
         header("Location: ../index.php");
@@ -20,12 +20,12 @@
         <img src="../images/hope-logo.png" alt="Logo" class="logo" />
         <div class="nav-container2">
         <ul>
-          <li><a href="gchomepage.php">Home</a></li>
-          <li><a href="students2.php">Students</a></li>
+          <li><a href="guidance-counsellor-homepage.php">Home</a></li>
+          <li><a href="students-2.php">Students</a></li>
           <li><a href="reports.php">Reports</a></li>
           <li><a href="appointments.php">Appointments</a></li>
           <li><a href="chat.php">Chat</a></li>
-          <li><a href="mhlogout.php">Log Out</a></li>
+          <li><a href="mental-health-logout.php">Log Out</a></li>
         </ul>
 </div>
       </div>
@@ -43,7 +43,7 @@
         <div class="appointmentdata2">
 
         <?php
-    include "mhdb.php";
+    include "mental-health-db.php";
     ?>
     <br>
     <br>
@@ -91,7 +91,7 @@ $startingrecord = ($page - 1) * $limit;
       <p class="p">Appointment Date: <?= $row['appointmentdate'] ?></p>
       <p class="p">Date Created: <?= $row['date_created'] ?></p>
     </div>
-      <a class="chatreport" name = "edit" href="reportchat.php?user_id=<?=$row['user_id']?>">Chat</a>
+      <a class="chatreport" name = "edit" href="report-chat.php?user_id=<?=$row['user_id']?>">Chat</a>
       <a class="delete" href="appointmentdelete.php?appointment_id=<?=$row['appointment_id']?>" onclick
         ="return confirm('Delete this report?')">🗑</a>
         <div class="pages">
@@ -126,7 +126,7 @@ $startingrecord = ($page - 1) * $limit;
       <p class="p">Appointment Date: <?= $row['appointmentdate'] ?></p>
       <p class="p">Date Created: <?= $row['date_created'] ?></p>
            </div>
-           <a class="chatreport" name = "edit" href="reportchat.php?user_id=<?=$row['user_id']?>">Chat</a>
+           <a class="chatreport" name = "edit" href="report-chat.php?user_id=<?=$row['user_id']?>">Chat</a>
       <a class="delete" href="appointmentdelete.php?appointment_id=<?=$row['appointment_id']?>" onclick
         ="return confirm('Delete this report?')">🗑</a>
         <div class="pages">

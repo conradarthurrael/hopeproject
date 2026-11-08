@@ -1,23 +1,30 @@
-<!Doctype html>
+<?php
+$contact_sent = false;
+if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['send_message'])) {
+    $contact_sent = true;
+}
+?>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>H ♡ P E</title>
-    <link rel="stylesheet" href="css/mhstyle.css?v=32" />
+    <link rel="stylesheet" href="css/landing-page.css" />
   </head>
   <body>
     <nav class="navbar">
       <div class="nav-container">
-        <img src="images/hope-logo.png" alt="Logo" class="logo" />
-        <div class="nav-container2">
+        <a href="#home"><img src="images/hope-logo.png" alt="Logo" class="logo" /></a>
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-</div>
+
+        <h4 class="login"><a href="login.php">Login</a></h4>
+        <h4 class="signup"><a href="register.php">Sign Up</a></h4>
       </div>
     </nav>
     <section class="home-section" id="home">
@@ -29,36 +36,9 @@
             Even in the quietest corners of your mind, every small step toward
             healing echoes across your entire life.
           </p>
-          <button class="hero-button">
-            <a href="html/mhregister.php">Get Started &nbsp; →</a>
-          </button>
+          <a href="register.php" class="hero-button">Get Started &nbsp; →</a>
         </div>
-        <div class="logincontainer">
-        <div class="logincontainer2">
-            <br>
-            <br>
-            <h1 class="logintext">Login</h1>
-            <div class="logincontainer3">
-            <?php
-             require "html/mhlogin.php"
-             ?>
-             <?php if ($error): ?>
-            <p style="color:red; font-size:30px;"><?php echo $error; ?></p>
-             <?php endif; ?>
-                <form method="POST" action="html/mhlogin.php">
-            <label>Email</label><br>
-            <input type="text" name="email" placeholder="Enter Email" required><br>
-            <label>Password</label><br>
-            <input type="text" name="password" placeholder="Enter Password" required><br>
-            <button type="submit" name="loginbutton" class="loginbutton">Login</button><br>
-             </form>
-            <div class="checkboxcontainer">
-            <input type="checkbox"><h4 class="rememberregister">Remember Me</h4>
-            <h4 class="rememberregister"><a href="html/mhregister.php">Register</a></h4>
-            </div>
-            </div>
-        </div>
-        </div>
+        <img src="images/side-background.jpg" alt="Mental Health" />
       </div>
     </section>
 
@@ -122,35 +102,55 @@
       </div>
     </section>
 
-     <main>
-        <section class="contact-section" id="contact" >
-            <h2 class="contact-title">Contact Information</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="info-card">
-                    <span class="info-label">EMAIL ADDRESS</span>
-                    <a href="mailto:hope@support.com" class="info-value">hope@support.com</a>
-                    </div>
-
-                    <div class="info-card">
-                        <span class="info-label">LOCATION</span>
-                        <p class="info-value">Guidance and Testing Office, Main Campus</p>
-                    </div>
-
-                    <div class="info-card">
-                        <span class="info-label">PHONE / HOTLINES</span>
-                        <div class="social-links">
-                            <a href="tel:+1234567890" class="info-value">+63 912 345 6789</a>
-                            <a href="tel:+0987654321" class="info-value">Emergency Line: 911</a>
-                    </div>
-                    </div>
-
-                    <div class="info-card">
-                        <span class="info-label">OPERATING HOURS</span>
-                        <p class="info-value">Monday – Friday: 8:00 AM – 5:00 PM</p>
-                    </div>
+    <main>
+      <section class="contact-section" id="contact">
+        <h2 class="contact-title">Contact Information</h2>
+        <div class="contact-container">
+          <div class="contact-info">
+            <div class="info-card">
+              <span class="info-label">EMAIL ADDRESS</span>
+              <a href="mailto:hope@support.com" class="info-value">hope@support.com</a>
             </div>
-        </section>
+
+            <div class="info-card">
+              <span class="info-label">LOCATION</span>
+              <p class="info-value">Guidance and Testing Office, Main Campus</p>
+            </div>
+
+            <div class="info-card">
+              <span class="info-label">PHONE / HOTLINES</span>
+              <div class="social-links">
+                <a href="tel:+1234567890" class="info-value">+63 912 345 6789</a>
+                <a href="tel:911" class="info-value">Emergency Line: 911</a>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <span class="info-label">OPERATING HOURS</span>
+              <p class="info-value">Monday – Friday: 8:00 AM – 5:00 PM</p>
+            </div>
+          </div>
+
+          <form class="contact-form" method="POST" action="#contact">
+            <h3 class="info-label" style="font-size: 19px; font-weight: bold; text-align: center;">MESSAGE US</h3>
+            <?php if ($contact_sent): ?>
+              <div style="background-color: #def7ec; color: #03543f; border: 1px solid #84e1bc; padding: 10px; border-radius: 8px; text-align: center; font-size: 14px;">
+                Thank you! Your message has been received.
+              </div>
+            <?php endif; ?>
+            <div class="form-group">
+              <input type="text" name="name" placeholder="Name" required />
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" placeholder="Email" required />
+            </div>
+            <div class="form-group">
+              <textarea name="message" placeholder="Message" rows="5" required></textarea>
+            </div>
+            <button type="submit" name="send_message" class="submit-btn">Send Message</button>
+          </form>
+        </div>
+      </section>
     </main>
   </body>
 </html>

@@ -16,7 +16,7 @@
           <li><a href="patientdoctors.php">Doctors</a></li>
           <li><a href="transactions.php">Transactions</a></li>
           <li><a href="#contact">Contact Us</a></li>
-          <li><a href="mhlogout.php">Log Out</a></li>
+          <li><a href="mental-health-logout.php">Log Out</a></li>
         </ul>
 </div>
       </div>
@@ -29,7 +29,7 @@
 </div>
 <div class="transactioncontainer">
     <?php
-    include "mhdb.php";
+    include "mental-health-db.php";
     session_start();
     if(!isset($_SESSION['user_id'])){
         header("Location: ../index.php");
@@ -58,8 +58,8 @@ $startingrecord = ($page - 1) * $limit;
       <p class="p">Appointment Date: <?= $row['appointmentdate'] ?></p>
       <p class="p">Transaction Date: <?= $row['transaction_date'] ?></p>
     </div>
-      <a class="edit" name = "edit" href="userupdate2.php?user_id=<?=$row['user_id']?>">🖋</a>
-      <a class="delete" href="userdelete.php?user_id=<?=$row['user_id']?>" onclick
+      <a class="edit" name = "edit" href="user-update-2.php?user_id=<?=$row['user_id']?>">🖋</a>
+      <a class="delete" href="user-delete.php?user_id=<?=$row['user_id']?>" onclick
         ="return confirm('Delete this user?')">🗑</a>
         <div class="pages">
         <?php $count_sql = "SELECT COUNT(*) AS total FROM transactions WHERE user_id='$user_id3'";
@@ -88,8 +88,8 @@ $startingrecord = ($page - 1) * $limit;
       <p class="p">Appointment Date: <?= $row['appointmentdate'] ?></p>
       <p class="p">Transaction Date: <?= $row['transaction_date'] ?></p>
            </div>
-      <a class="edit" name = "edit" href="userupdate2.php?user_id=<?=$row['user_id']?>">🖋</a>
-      <a class="delete" href="userdelete.php?user_id=<?=$row['user_id']?>" onclick
+      <a class="edit" name = "edit" href="user-update-2.php?user_id=<?=$row['user_id']?>">🖋</a>
+      <a class="delete" href="user-delete.php?user_id=<?=$row['user_id']?>" onclick
         ="return confirm('Delete this user?')">🗑</a></div>
         <div class="pages">
         <?php $count_sql = "SELECT COUNT(*) AS total FROM transactions WHERE user_id='$user_id3'";

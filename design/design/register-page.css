@@ -1,0 +1,165 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #e3ece2 0%, #f5f9f4 48%, #c5cec2 100%);
+  background-attachment: fixed;
+}
+
+a {
+  text-decoration: none;
+   color: rgb(60, 60, 128); 
+}
+
+a:hover {
+  color: rgb(36, 133, 104);
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(42, 153, 32, 0.6) 100%
+  );
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(35, 79, 30, 0.28);
+  border-top-color: rgba(255, 255, 255, 0.72);
+  padding: 15px 24px;
+}
+
+.nav-container {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-container ul {
+  display: inline-flex;
+  align-items: center;
+  list-style: none;
+  margin-left: 1000px;
+}
+
+.nav-container li a {
+  position: relative;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.nav-container li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+  height: 2px;
+  background: rgb(53, 53, 53);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.nav-container li a:hover {
+  color: rgb(53, 53, 53);
+}
+
+.nav-container li a:hover::after {
+  transform: scaleX(1);
+}
+
+.logo {
+  height: 40px;
+  align-self: center;
+  padding-left: 20px;
+}
+
+.register-container {
+  width: min(100%, 500px);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(35, 79, 30, 0.28);
+  border-radius: 28px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  padding: 30px 24px 26px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.register-container h1{
+    margin: 0 0 22px;
+    text-align: center;
+    color: #284238;
+}
+
+p {
+    margin: 0 0 30px;
+    text-align: center;
+    color: #0f1412;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #0f1412;
+    margin-left: 25%;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"], 
+input[type="confirm-password"], 
+input[type="date"], 
+select {
+    width: 50%;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    margin-left: 25%;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus, 
+input[type="confirm-password"]:focus, 
+input[type="date"]:focus
+select:focus {
+    outline: none;
+    border-color: #2a9920;
+}
+
+button {
+    width: 20%;
+    padding: 12px 12px;
+    background-color: #2a9920;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    align-self: center;
+    margin-bottom: 10px;
+}
